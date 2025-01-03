@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+    <title>Students' Actuarial Society - About Us</title>
+    <style>
+        /* Body and Global Settings */
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            color: #fff;
+            height: 100%; /* Ensures the body takes up full height of the viewport */
+            display: flex; /* Flexbox for the layout */
+            flex-direction: column; /* Stacks content vertically */
+            background: transparent; /* Transparent to show video background */
+        }
+
+        /* Video Background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Frosted Glass Navbar */
+        nav {
+            position: sticky;
+            top: 20px;
+            margin: 0 auto;
+            width: 70%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            padding: 10px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: #ccc;
+        }
+
+        /* Main Content */
+        #content {
+            flex: 1;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        #content.fade-out {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* Frosted Glass Tile */
+        .frosted-tile {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInTile 0.4s ease-out forwards;
+        }
+
+        .frosted-tile:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .frosted-tile:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        @keyframes fadeInTile {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+                backdrop-filter: blur(0px);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.0);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                backdrop-filter: blur(20px);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .frosted-tile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* President and Additional Tile Section */
+        .tile-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .half-tile {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            max-width: calc(50% - 10px);
+        }
+
+        .president-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .tile-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .text-center {
+            text-align: center; /* Horizontally centers the text */
+            line-height: 150px; /* Adjusts to the height of the container */
+            margin: 0; /* Ensures no default margin */
+        }
+
+        .tile-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .tile-subtitle {
+            font-size: 1rem;
+            margin: 5px 0 0;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        footer .social-icons a {
+            margin: 0 10px;
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <img class="video-background" src="wallpaper.png" alt="Background wallpaper">
+
+    <!-- Frosted Glass Navbar -->
+    <nav>
+        <div class="logo">
+            <a href="#" id="home-link" data-section="home">∫äš</a>
+        </div>
+        <div class="nav-links">
+            <a href="#" data-section="newsletters">Newsletters</a>
+            <a href="#" data-section="conference">Conference</a>
+            <a href="#" data-section="links">Links</a>
+            <a href="#" data-section="about">About Us</a>
+        </div>
+    </nav>
+
+    <!-- Content Area -->
+    <div id="content">
+        <!-- Default Content -->
+        <div class="frosted-tile">
+            <h1>Welcome to the Students' Actuarial Society</h1>
+            <p>Click on the links in the navbar to explore more about us!</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/hw_sas/">Instagram</a> | <a href="https://www.linkedin.com/company/hwsas/">LinkedIn</a>
+        </div>
+        <p>© 2025 Students' Actuarial Society. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Content for each section
+        const sections = {
+            home: `
+            <div class="frosted-tile">
+                <h1>Welcome to the Students' Actuarial Society</h1>
+            </div>
+            <div class="frosted-tile">
+                <h2>Announcements</h2>
+                <a href="#newsletters" style="display: block; text-align: center;">
+                    <img src="Announcements/Newsletter.png" 
+                         alt="Newsletter Announcement" 
+                         style="width: 400px; height: 400px; object-fit: cover; border-radius: 10px; margin: 10px auto;">
+                </a>
+            </div>
+        `,
+        conference: `
+                <div class="tile-row center-content">
+                    <!-- Conference Header Tile -->
+                    <div class="frosted-tile" style="width: 100%; text-align: center; padding: 30px;">
+                        <h2 class="tile-title">HWU Students’ Actuarial Society Annual Actuarial Conference 2025</h2>
+                        <p>
+                            Join us for the Annual Actuarial Conference, hosted by the Heriot-Watt University Students’ Actuarial Society!
+                            <br><br>
+                            This event offers a fantastic opportunity to network with fellow students and professionals, learn about the latest trends in the actuarial field, and gain insights from experienced industry leaders. 
+                            <br><br>
+                            The evening will feature two talks from prominent actuarial professionals and an engaging panel discussion.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Event Details Tile -->
+                <div class="tile-row center-content">
+                    <div class="frosted-tile" style="width: 100%; padding: 20px; text-align: center;">
+                        <h3 class="tile-title" style="text-align: center;">Event Details</h3>
+                        <p style="text-align: center;">
+                            <strong>Date:</strong> Wednesday, 29th January 2025<br>
+                            <strong>Time:</strong> 4:50 PM - 7:30 PM<br>
+                            <strong>Location:</strong> James Watt Auditorium, Heriot-Watt University (Edinburgh)
+                        </p>
+                        <div style="display: flex; justify-content: center; margin-top: 20px;">
+                            <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=8l9CbGVo30Kk245q9jSBPaUuzGFo0hpDkGsNoJ7GuflUNzA1UlNISjNLTFcyWE1SNzlZNVJRSzZHSy4u" target="_blank" 
+                               style="padding: 15px 25px; text-decoration: none; background-color: rgba(0, 183, 255, 0.8); color: #fff; border-radius: 8px; text-align: center; font-weight: bold;">
+                                Register Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `,
+        newsletters: `
+                <div class="tile-row center-content">
+                    <div class="frosted-tile" style="width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 15px; padding: 30px; margin-bottom: 20px;">
+                        <h2 class="tile-title">Christmas Edition</h2>
+                        <p>
+                            This winter edition dives into some of the most intriguing topics shaping the actuarial field:
+                        </p>
+                        <p style="margin: 10px 0;">
+                            🎄 Takaful vs Conventional Insurance <br>
+                            🌍 The Pivotal Role of Actuaries in Assessing Climate-Related Risks <br>
+                            💼 Pensions: Collective Defined Contribution (CDC) Schemes
+                        </p>
+                        <p>
+                            Packed with insights and expert perspectives, this edition is a must-read for staying ahead this holiday season. Don’t miss out! 🎅📚✨
+                        </p>
+                        <a href="newsletters/christmas.pdf" target="_blank" 
+                           style="padding: 15px 25px; text-decoration: none; background-color: rgba(0, 183, 255, 0.8); color: #fff; border-radius: 8px; font-weight: bold;">
+                            View Winter Edition (PDF)
+                        </a>
+                    </div>
+                    <div class="frosted-tile" style="width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 15px; padding: 30px;">
+                        <h2 class="tile-title">October Edition</h2>
+                        <p>
+                            In this edition, we’re exploring some of the most critical topics in the actuarial world:
+                        </p>
+                        <p style="margin: 10px 0;">
+                            🔍 AI’s Impact on the Actuarial Industry <br>
+                            🌍 Actuaries & Climate Change Adaptation <br>
+                            💡 Annuities & Stable Retirement Income
+                        </p>
+                        <p>
+                            Stay ahead of the game with expert insights on these evolving trends! Don’t miss out—check the full newsletter for more in-depth analysis. 📈✨
+                        </p>
+                        <a href="newsletters/october.pdf" target="_blank" 
+                           style="padding: 15px 25px; text-decoration: none; background-color: rgba(0, 183, 255, 0.8); color: #fff; border-radius: 8px; font-weight: bold;">
+                            View October Edition (PDF)
+                        </a>
+                    </div>
+                </div>
+            `,
+            links: `
+                <div class="tile-row center-content" style="flex-direction: column; gap: 20px;">
+                    <!-- Links Header Tile -->
+                    <div class="frosted-tile" style="width: 100%; text-align: center; padding: 20px; text-decoration: none; color: #fff;">
+                        <p>
+                            Find all the essential links here:
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Individual Link Tiles -->
+                <div class="tile-row center-content" style="flex-direction: column; gap: 20px;">
+                    <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=8l9CbGVo30Kk245q9jSBPVvVKFNrvAZFstqWO7fNo51UQ09EMThQQllRR1lSODFWMEtUQlI2WVUzNy4u" 
+                       class="frosted-tile" 
+                       style="width: 100%; text-align: center; padding: 20px; text-decoration: none; color: #fff; font-weight: bold;">
+                        Join Us
+                    </a>
+                    <a href="https://www.linkedin.com/company/hwsas/" 
+                       class="frosted-tile" 
+                       style="width: 100%; text-align: center; padding: 20px; text-decoration: none; color: #fff; font-weight: bold;">
+                        LinkedIn
+                    </a>
+                     <a href="https://www.instagram.com/hw_sas/" 
+                       class="frosted-tile" 
+                       style="width: 100%; text-align: center; padding: 20px; text-decoration: none; color: #fff; font-weight: bold;">
+                        Instagram
+                    </a>
+                    <a href="https://forms.office.com/e/LUkz8jZNQs" 
+                       class="frosted-tile" 
+                       style="width: 100%; text-align: center; padding: 20px; text-decoration: none; color: #fff; font-weight: bold;">
+                        Sub-Committee
+                    </a>
+                    <a href= "https://forms.office.com/Pages/ResponsePage.aspx?id=8l9CbGVo30Kk245q9jSBPaUuzGFo0hpDkGsNoJ7GuflUNzA1UlNISjNLTFcyWE1SNzlZNVJRSzZHSy4u" 
+                       class="frosted-tile" 
+                       style="width: 100%; text-align: center; padding: 20px; text-decoration: none; color: #fff; font-weight: bold;">
+                        Conference Registration
+                    </a>
+                     <a href="https://forms.gle/X1g1MupiYLYFHyiJ6" 
+                       class="frosted-tile" 
+                       style="width: 100%; text-align: center; padding: 20px; text-decoration: none; color: #fff; font-weight: bold;">
+                        Artificial Assessment Centre
+                    </a>
+                    <a href="#newsletters" 
+                       class="frosted-tile" 
+                       style="width: 100%; text-align: center; padding: 20px; text-decoration: none; color: #fff; font-weight: bold;">
+                        Newsletters
+                    </a>
+                    <a href="mailto:actuarial.society@hw.ac.uk" 
+                       class="frosted-tile" 
+                       style="width: 100%; text-align: center; padding: 20px; text-decoration: none; color: #fff; font-weight: bold;">
+                        Contact Us
+                    </a>
+                </div>
+            `,
+            about: `
+                <div class="frosted-tile">
+                    <h1>About Us</h1>
+                    <p>We aim to enhance your industry knowledge through our newsletters and annual actuarial conference, featuring expert speakers discussing topics relevant to you. Last year's conference included talks from Cigna, OAC, Aegon, PwC, and a panel discussion, we also had representatives from the Worshipful Company of Actuaries and the Institute and Faculty of Actuaries.</p>
+                    <p>Furthermore, we host careers talks from internal staff and external firms, providing insights into the recruitment process. Past speakers have included professionals from Lloyds, 4most, and even Heriot-Watt teaching staff sharing their research. To help you prepare for internships or graduate roles, we offer a mock assessment centre and work with MACS to provide student-led revision sessions for challenging courses.</p>
+                    <p>But it’s not all about work—we also organise regular socials like bowling, mini golf, pub crawls, and treasure hunts to help you relax and network with peers across the faculty. SAS is here to support you both academically and socially. Feel free to reach out anytime; we're always open to everyone!</p>
+                </div>
+                <div class="tile-row">
+                    <div class="frosted-tile half-tile" onclick="loadMemberPage('alannah')">
+                        <img src="images/alannah/circle.png" alt="President Alannah Barreto" class="president-image">
+                        <div class="tile-text">
+                            <h2 class="tile-title">President</h2>
+                            <p class="tile-subtitle">Alannah Barreto</p>
+                            <p class="tile-subtitle">Year 4 Actuarial Science</p>
+                        </div>
+                    </div>
+                    <div class="frosted-tile half-tile" onclick="loadMemberPage('olivia')">
+                        <img src="images/olivia/circle.png" alt="Vice President Olivia Kuijpers" class="president-image">
+                        <div class="tile-text">
+                            <h2 class="tile-title">Vice President</h2>
+                            <p class="tile-subtitle">Olivia Kuijpers</p>
+                            <p class="tile-subtitle">Year 4 Actuarial Science</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="tile-row">
+                <div class="frosted-tile half-tile" onclick="loadMemberPage('david')">
+                    <img src="images/david/circle.png" alt="Vice President David Keong" class="president-image">
+                    <div class="tile-text">
+                        <h2 class="tile-title">Vice President</h2>
+                        <p class="tile-subtitle">David Keong</p>
+                        <p class="tile-subtitle">Year 4 Statistical Data Science</p>
+                    </div>
+                </div>
+                <div class="frosted-tile half-tile" onclick="loadMemberPage('aryan')">
+                    <img src="images/aryan/circle.png" alt="Communication Secretary Aryan Jangir" class="president-image">
+                    <div class="tile-text">
+                        <h2 class="tile-title">Communication Secretary</h2>
+                        <p class="tile-subtitle">Aryan Jangir</p>
+                        <p class="tile-subtitle">Year 3 Computer Science</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tile-row">
+                <div class="frosted-tile half-tile" onclick="loadMemberPage('tawana')">
+                    <img src="images/tawana/circle.png" alt="Treasurer Tawana Kuchocha" class="president-image">
+                    <div class="tile-text">
+                        <h2 class="tile-title">Treasurer</h2>
+                        <p class="tile-subtitle">Tawana Kuchocha</p>
+                        <p class="tile-subtitle">Year 3 Actuarial Science</p>
+                    </div>
+                </div>
+                <div class="frosted-tile half-tile" onclick="loadMemberPage('aditya')">
+                    <img src="images/aditya/circle.png" alt="Conference Director Aditya Patil" class="president-image">
+                    <div class="tile-text">
+                        <h2 class="tile-title">Conference Director</h2>
+                        <p class="tile-subtitle">Aditya Patil</p>
+                        <p class="tile-subtitle">Year 3 Mathematics and Statistics</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tile-row">
+                <div class="frosted-tile half-tile"  onclick="loadMemberPage('meabh')">
+                    <img src="images/meabh/circle.png" alt="Artificial Assessment Centre Director Meabh Dolan" class="president-image">
+                    <div class="tile-text">
+                        <h2 class="tile-title">Artificial Assessment Centre Director</h2>
+                        <p class="tile-subtitle">Méabh Dolan</p>
+                        <p class="tile-subtitle">Year 4 Actuarial Science</p>
+                    </div>
+                </div>
+                <div class="frosted-tile half-tile"  onclick="loadMemberPage('zarif')">
+                    <img src="images/zarif/circle.png" alt="Current Affairs Zarif Zulkiflee" class="president-image">
+                    <div class="tile-text">
+                        <h2 class="tile-title">Current Affairs</h2>
+                        <p class="tile-subtitle">Zarif Zulkiflee</p>
+                        <p class="tile-subtitle">Year 4 Actuarial Science</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tile-row">
+                <div class="frosted-tile half-tile"  onclick="loadMemberPage('zafeer')">
+                    <img src="images/zafeer/circle.png" alt="Careers & Education Zafeer Khan" class="president-image">
+                    <div class="tile-text">
+                        <h2 class="tile-title">Careers & Education</h2>
+                        <p class="tile-subtitle">Zafeer Khan</p>
+                        <p class="tile-subtitle">Year 3 Actuarial Science</p>
+                    </div>
+                </div>
+                <div class="frosted-tile half-tile"  onclick="loadMemberPage('kichan')">
+                    <img src="images/kichan/circle.png" alt="Careers & Education Kichan Hwang" class="president-image">
+                    <div class="tile-text">
+                        <h2 class="tile-title">Careers & Education</h2>
+                        <p class="tile-subtitle">Kichan Hwang</p>
+                        <p class="tile-subtitle">Year 4 Mathematical, Statistical, and Actuarial Sciences</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tile-row">
+                <div class="frosted-tile half-tile"  onclick="loadMemberPage('ryan')">
+                    <img src="images/ryan/circle.png" alt="Social Secretary Ryan Pemhiwa" class="president-image">
+                    <div class="tile-text">
+                        <h2 class="tile-title">Social Secretary</h2>
+                        <p class="tile-subtitle">Ryan Pemhiwa</p>
+                        <p class="tile-subtitle">Year 4 Statistical Data Science</p>
+                    </div>
+                </div>
+                <div class="frosted-tile half-tile"  onclick="loadMemberPage('karan')">
+                    <img src="images/karan/circle.png" alt="Social Secretary Karan Kothari" class="president-image">
+                    <div class="tile-text">
+                        <h2 class="tile-title">Social Secretary</h2>
+                        <p class="tile-subtitle">Karan Kothari</p>
+                        <p class="tile-subtitle">Year 3 Computer Science</p>
+                    </div>
+                </div>
+            </div>
+            `,
+            alannah: `
+                <div class="tile-row center-content">
+                   <div class="frosted-tile" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 20px;">
+                    <img src="images/alannah/circle.png" alt="President Alannah Barreto" 
+                        style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                    <div>
+                        <h2 class="tile-title">President</h2>
+                        <p class="tile-subtitle">Alannah Barreto</p>
+                        <p class="tile-subtitle">Year 4 Actuarial Science</p>
+                    </div>
+                </div>
+                </div>
+                <div class="frosted-tile">
+                    <p>
+                        Starting off this year with a bang, let’s give a warm welcome to our newly crowned President, the one and only Miss Alannah Barreto! 🎉 Having led as last year’s AAC Director, we already know this multitasking queen is ready to take charge and elevate the society to new heights 🫡 You’ll never see Alannah without a plan—seriously, you need at least a week’s notice to even think about plans with her 😅 But that’s just part of what makes her such a reliable leader! Whether it’s a club meeting or baking up some Prawn Alfredo (or anything Italian), Alannah is all about the details 😌
+                        <br>
+                        <br>
+                        When she’s not in committee meetings, you’ll find her crocheting up a storm, belting out ABBA, or dreaming of her next trip to Goa 🌍 Oh, and if you’ve got a Brooklyn Nine-Nine reference, be sure to throw it her way—it’s her go-to binge show 😉 President Barreto, we’re all confident you’re going to take us to new levels! Bring it on, Alannah 🫡🎶🍝
+                    </p>
+                </div>
+                <div class="frosted-tile">
+                    <h3 style="text-align: center;">Gallery</h3>
+                    <div class="image-gallery" style="display: flex; gap: 10px; justify-content: center;">
+                        <img src="images/alannah/01.jpeg" alt="Alannah Photo 1" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                        <img src="images/alannah/02.jpg" alt="Alannah Photo 2" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                        <img src="images/alannah/03.jpg" alt="Alannah Photo 3" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                    </div>
+                </div>
+                `,
+                olivia: `
+                    <div class="tile-row center-content">
+                        <div class="frosted-tile" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 20px;">
+                            <img src="images/olivia/circle.png" alt="Vice President Olivia Kuijpers" 
+                                style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <h2 class="tile-title">Vice President</h2>
+                                <p class="tile-subtitle">Olivia Kuijpers</p>
+                                <p class="tile-subtitle">Year 4 Actuarial Science</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="frosted-tile">
+                        <p>
+                            Let’s give a round of applause for our Vice President, the fabulous Miss Olivia Kuijpers! 🫡 Stepping up from last year’s committee, Olivia is read to guide the society with her signature cool, calm, and collected nature. Outside of society matters, she’s a master at crafting the perfect mozzarella prosciutto and pesto ciabatta—a true culinary masterpiece 😌. For the cat lovers out there, her adorable feline companion is never far from her side. Olivia’s favorite show is ‘Normal People’, and it’s one she never gets tired of re-watching!
+                            <br>
+                            <br>
+                            Her idea of the perfect getaway? Literally anywhere warmer than Scotland 🏝. When she’s not planning her next sunny holiday, you’ll likely find her relaxing with a good book or enjoying some Amy Winehouse or Al Green.
+                            <br>
+                            <br>
+                            All in all, we couldn’t ask for a more organised and dedicated VP! 🤩
+                        </p>
+                    </div>
+                    <div class="frosted-tile">
+                        <h3 style="text-align: center;">Gallery</h3>
+                        <div class="image-gallery" style="display: flex; gap: 10px; justify-content: center;">
+                            <img src="images/olivia/01.jpg" alt="Olivia Photo 1" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                            <img src="images/olivia/02.jpg" alt="Olivia Photo 2" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                            <img src="images/olivia/03.jpg" alt="Olivia Photo 3" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                        </div>
+                    </div>
+                `,
+                david: `
+                    <div class="tile-row center-content">
+                        <div class="frosted-tile" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 20px;">
+                            <img src="images/david/circle.png" alt="Vice President David Keong" 
+                                style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <h2 class="tile-title">Vice President</h2>
+                                <p class="tile-subtitle">David Keong</p>
+                                <p class="tile-subtitle">Year 4 Statistical Data Science</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="frosted-tile">
+                        <p>
+                            Introducing one of our newest Vice Presidents, the brilliant Mr. David Keong! 🎉 Hailing all the way from Malaysia, David brings some international flair and fresh energy to the society. Currently in his 4th year studying Statistical Data Science, David is the kind of guy who can make stats sound almost… fun? (I said almost, let’s not get carried away) 🧠.
+                            <br>
+                            <br>
+                            David’s love for fried chicken is serious business—his analysis of the perfect crunch could rival his data projects 🐔😌. But when he’s not deep in numbers or enjoying some crispy goodness, you’ll likely find him binge-watching Community. The man is basically a walking quote machine—challenge him to a trivia contest at your own risk 📺.
+                            <br>
+                            <br>
+                            Need a holiday recommendation? David’s dream destination is Italy—because who wouldn’t want to swap spreadsheets for sunshine and gelato? 🍕🇮🇹
+                            <br>
+                            <br>
+                            And here’s something you don’t hear every day: David’s hobby is building custom keyboards. While most of us are just happy if ours doesn’t jam, he’s busy crafting the perfect typing experience. Talk about attention to detail ⌨️.
+                            <br>
+                            <br>
+                            He’s also got a killer playlist, vibing to Indie and Hip-hop R&B, so if you ever see him with his headphones on, just assume he’s plotting world domination (or maybe just the perfect Spotify queue) 🎶.
+                            <br>
+                            <br>
+                            David, we’re beyond excited to have you on board, and we know you’re going to bring your A-game as VP! 🫡💻
+                        </p>
+                    </div>
+                    <div class="frosted-tile">
+                        <h3 style="text-align: center;">Gallery</h3>
+                        <div class="image-gallery" style="display: flex; gap: 10px; justify-content: center;">
+                            <img src="images/david/01.jpg" alt="David Photo 1" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                            <img src="images/david/02.jpg" alt="David Photo 2" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                            <img src="images/david/03.jpg" alt="David Photo 3" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                        </div>
+                    </div>
+                `,
+                aryan: `
+                    <div class="tile-row center-content">
+                        <div class="frosted-tile" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 20px;">
+                            <img src="images/aryan/circle.png" alt="Communication Secretary Aryan Jangir" 
+                                style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <h2 class="tile-title">Communication Secretary</h2>
+                                <p class="tile-subtitle">Aryan Jangir</p>
+                                <p class="tile-subtitle">Year 3 Computer Science</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="frosted-tile">
+                        <p>
+                            Hey everyone, I’m Aryan Jangir, your friendly Communication Director, here to bombard you with social media posts and emails 📧. I’m in my 3rd year of Computer Science, and yep, I’m also the President of the Computer Science Society.
+                            <br><br>
+                            My food pyramid is basically just biryani 🍛, and my life philosophy comes straight from Death Note (no spoilers, but I’m definitely taking notes on how to rule the world—email management is just the first step 🤫). Oh, and you’ll often catch me with Diljit Dosanjh on repeat, because nothing says “deep focus” like Punjabi beats 🎶.
+                            <br><br>
+                            Now for my grand, totally realistic life goal: I plan to become a farmer in China 🧑‍🌾🇨🇳. I know, it’s not your everyday dream, but I’m just out here trying to live my best life harvesting data and crops. Also, fair warning: if you send me a message and I don’t reply immediately, I’m probably lost in the black hole that is Instagram reels 📱. No regrets.
+                            <br><br>
+                            Excited to keep things fun and chaotic this year—let’s make some magic happen (or at least some epic posts) 🌱.
+                        </p>
+                    </div>
+                    <div class="frosted-tile">
+                        <h3 style="text-align: center;">Gallery</h3>
+                        <div class="image-gallery" style="display: flex; gap: 10px; justify-content: center;">
+                            <img src="images/aryan/01.jpeg" alt="Aryan Photo 1" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                            <img src="images/aryan/02.jpeg" alt="Aryan Photo 2" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                            <img src="images/aryan/03.gif" alt="Aryan GIF" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                        </div>
+                    </div>
+                `,
+                tawana: `
+                    <div class="tile-row center-content">
+                        <div class="frosted-tile" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 20px;">
+                            <img src="images/tawana/circle.png" alt="Treasurer Tawana Kuchocha" 
+                                style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <h2 class="tile-title">Treasurer</h2>
+                                <p class="tile-subtitle">Tawana Kuchocha</p>
+                                <p class="tile-subtitle">Year 3 Actuarial Science</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="frosted-tile">
+                        <p>
+                            Let’s give a big welcome to our brand-new Treasurer, the fantastic Mr. Tawana Kuchocha! 🎉 A Year 3 Actuarial Science student, Tawana’s the guy we’re trusting with the society’s finances—and given his love for lasagne, we’re sure he knows how to layer up those numbers just as perfectly as those pasta sheets 🧮🍝.
+                            <br><br>
+                            When Tawana’s not balancing the books, you’ll probably find him deep into Money Heist binge sessions, figuring out how to stay calm when actuarial formulas feel like a crime scene of their own 📊. His chill escape? Scrolling through reels, the perfect way to unwind after a day of calculations.
+                            <br><br>
+                            His playlist is all about rap beats, so if you ever hear him with his headphones on, just know he’s in the zone, likely adding up figures with serious swagger 🎧.
+                            <br><br>
+                            Tawana, we’re thrilled to have you on board as our Treasurer! With you in charge, we know the society’s funds are in safe hands—and maybe even gaining interest 😉.
+                        </p>
+                    </div>
+                    <div class="frosted-tile">
+                        <h3 style="text-align: center;">Gallery</h3>
+                        <div class="image-gallery" style="display: flex; gap: 10px; justify-content: center;">
+                            <img src="images/tawana/01.jpg" alt="Tawana Photo 1" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                            <img src="images/tawana/02.jpg" alt="Tawana Photo 2" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                            <img src="images/tawana/03.jpg" alt="Tawana Photo 3" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                        </div>
+                    </div>
+                `,
+                aditya: `
+                    <div class="tile-row center-content">
+                        <div class="frosted-tile" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 20px;">
+                            <img src="images/aditya/circle.png" alt="Conference Director Aditya Patil" 
+                                style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <h2 class="tile-title">Conference Director</h2>
+                                <p class="tile-subtitle">Aditya Patil</p>
+                                <p class="tile-subtitle">Year 3 Mathematics and Statistics</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="frosted-tile">
+                        <p>
+                            Let’s give a huge welcome to our Conference Director, the multi-talented Mr. Aditya Patil! 🎉 Having served as last year’s Social Secretary, Aditya is no stranger to running the show, but this year, he’s stepping it up by planning the ultimate conference experience for the society. And with his badminton skills—did we mention he was Edinburgh’s number one player? 🏸—we’re confident he’ll smash the competition and put together an event that’s nothing short of amazing!
+                            <br><br>
+                            When Aditya isn’t busy orchestrating the perfect conference, you might find him strumming his guitar or binge-watching Suits while polishing his already impeccable racket skills. If he’s not dreaming up new badminton strategies, he’s probably enjoying a plate of masala dosa or mapping out his next travel destination 🌏. Though he’s a globetrotter, Bangalore will always hold a special place in his heart 🏙️.
+                            <br><br>
+                            And let’s not forget his soft spot for Bryan Adams—whether it’s “Summer of ’69” or “Heaven,” Aditya’s got the perfect playlist to keep the vibes high while he works on the conference 🎸.
+                            <br><br>
+                            Aditya, we’re beyond excited to see what you have in store for us this year! Bring on the conference 🫡👏
+                        </p>
+                    </div>
+                    <div class="frosted-tile">
+                        <h3 style="text-align: center;">Gallery</h3>
+                        <div class="image-gallery" style="display: flex; gap: 10px; justify-content: center;">
+                            <img src="images/aditya/01.jpeg" alt="Aditya Photo 1" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                            <img src="images/aditya/02.jpeg" alt="Aditya Photo 2" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                            <img src="images/aditya/03.jpg" alt="Aditya Photo 3" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                        </div>
+                    </div>
+                `,
+                meabh: `
+                <div class="tile-row center-content">
+                    <div class="frosted-tile" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 20px;">
+                        <img src="images/meabh/circle.png" alt="Artificial Assessment Centre Director Méabh Dolan" 
+                            style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <h2 class="tile-title">Artificial Assessment Centre Director</h2>
+                            <p class="tile-subtitle">Méabh Dolan</p>
+                            <p class="tile-subtitle">Year 4 Actuarial Science</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="frosted-tile">
+                    <p>
+                        Let’s give a warm welcome to Méabh Dolan, our incredible Artificial Assessment Centre Director! 🎉 In her 4th year of Actuarial Science, Méabh is ready to dive headfirst into the role—literally, since she’s an avid swimmer! 🏊‍♀️ Her organisational skills are as sharp as her freestyle stroke, so we know the AAC is in excellent hands.
+                        <br><br>
+                        Méabh’s got a knack for enjoying life’s little pleasures—whether it’s grabbing a sweet treat from Tesco to power through her day 🍩 or kicking back with Fleetwood Mac and Paolo Nutini as she plans her next getaway to Barcelona ☀️. And when it’s time for some well-deserved downtime, she’s probably wrapped up in a good book or catching an episode of Gilmore Girls.
+                        <br><br>
+                        Balancing her love for reading and running the AAC like a pro, Méabh is set to make this year a huge success. We couldn’t be more excited to have her at the helm!
+                    </p>
+                </div>
+                <div class="frosted-tile">
+                    <h3 style="text-align: center;">Gallery</h3>
+                    <div class="image-gallery" style="display: flex; gap: 10px; justify-content: center;">
+                        <img src="images/meabh/01.jpg" alt="Méabh Photo 1" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                        <img src="images/meabh/02.jpg" alt="Méabh Photo 2" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                        <img src="images/meabh/03.jpg" alt="Méabh Photo 3" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                    </div>
+                </div>
+            `,
+            zarif: `
+                <div class="tile-row center-content">
+                    <div class="frosted-tile" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 20px;">
+                        <img src="images/zarif/circle.png" alt="Current Affairs Zarif Zulkiflee" 
+                            style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <h2 class="tile-title">Current Affairs</h2>
+                            <p class="tile-subtitle">Zarif Zulkiflee</p>
+                            <p class="tile-subtitle">Year 4 Actuarial Science</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="frosted-tile">
+                    <p>
+                        Say hello to Zarif Zulkiflee, our go-to guy for all things Current Affairs! As a final-year Actuarial Science student, Zarif is basically our in-house newsfeed—minus the annoying notifications 📲. Armed with a love for fried rice, Zarif is ready to serve up the latest hot topics with a side of sharp analysis 🍚.
+                        <br><br>
+                        When he’s not keeping us all in the loop, Zarif’s recharging his brain with a healthy dose of *One Day* on Netflix (seriously, he’s got the perfect show for every mood). He’s also been spotted daydreaming about his next big adventure to Istanbul—probably planning the ultimate travel itinerary while humming along to his favourite Lauv tracks 🎶.
+                        <br><br>
+                        Zarif, with your knack for staying informed and your laid-back style, we know you’re going to keep us entertained and enlightened this year. Let’s make it a good one! 🫡
+                    </p>
+                </div>
+                <div class="frosted-tile">
+                    <h3 style="text-align: center;">Gallery</h3>
+                    <div class="image-gallery" style="display: flex; gap: 10px; justify-content: center;">
+                        <img src="images/zarif/01.jpg" alt="Zarif Photo 1" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                        <img src="images/zarif/02.jpg" alt="Zarif Photo 2" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                        <img src="images/zarif/03.jpg" alt="Zarif Photo 3" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                    </div>
+                </div>
+            `,
+            zafeer: `
+                <div class="tile-row center-content">
+                    <div class="frosted-tile" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 20px;">
+                        <img src="images/zafeer/circle.png" alt="Careers & Education Zafeer Khan" 
+                            style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <h2 class="tile-title">Careers & Education</h2>
+                            <p class="tile-subtitle">Zafeer Khan</p>
+                            <p class="tile-subtitle">Year 3 Actuarial Science</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="frosted-tile">
+                    <p>
+                        Introducing Zafeer, our Careers & Education Director, who’s not only juggling actuarial work but also leading the Islamic Society as President—talk about multitasking! 🎓🕌 A 3rd-year student in Actuarial Science, Zafeer’s got a knack for balancing his love for numbers with an impressive list of hobbies. Seriously, this guy does it all—from tennis and golf, to mastering the art of equestrian sports 🏌️‍♂️🐎.
+                        <br><br>
+                        And when it comes to food, Zafeer’s got a taste for the finer things with his favourite dish, Zürcher Geschnetzeltes—if that doesn’t scream “worldly,” we don’t know what does! 🌍. Between meals, you’ll find him jet-setting to the Swiss Alps, probably writing his next masterpiece or catching up on his favourite show, *This Is Us* (he’s got a soft spot for emotional rollercoasters) 📺.
+                        <br><br>
+                        As if that wasn’t enough, he’s also a dedicated Swiftie—so if you ever hear Taylor Swift playing, you know Zafeer’s in full career-planning mode 🎶.
+                        <br><br>
+                        With Zafeer on board, we’re confident that Careers & Education is going to be in the best hands—whether he’s charting career paths or conquering a mountain! 🫡👏
+                    </p>
+                </div>
+                <div class="frosted-tile">
+                    <h3 style="text-align: center;">Gallery</h3>
+                    <div class="image-gallery" style="display: flex; gap: 10px; justify-content: center;">
+                        <img src="images/zafeer/01.jpg" alt="Zafeer Photo 1" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                    </div>
+                </div>
+            `,
+            kichan: `
+                <div class="tile-row center-content">
+                    <div class="frosted-tile" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 20px;">
+                        <img src="images/kichan/circle.png" alt="Careers & Education Kichan Hwang" 
+                            style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <h2 class="tile-title">Careers & Education</h2>
+                            <p class="tile-subtitle">Kichan Hwang</p>
+                            <p class="tile-subtitle">Year 4 MSAS</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="frosted-tile">
+                    <p>
+                        Let’s give it up for Kichan Hwang, our Careers & Education Director, who’s as sharp with numbers as he is with a bass guitar or a gaming controller! 🎮🎸 As a 4th-year student in MSAS (that’s Mathematical, Statistical, and Actuarial Sciences for the uninitiated), Kichan is the ultimate multi-tasker. Whether it’s solving complex equations or pulling off a winning move in League of Legends, he’s always a step ahead.
+                        <br><br>
+                        Kichan is powered by Kimchi Stew, so you know he means business when it comes to getting things done 🍲. And while he’s all about making career moves, he’s already daydreaming of his next trip to Osaka or Barcelona—because even the hardest-working minds need a break 🛫.
+                        <br><br>
+                        His soundtrack of choice? The soothing beats of IU on repeat, perfect for setting the vibe while working on his next big career plan 🎶. And for downtime? He’s a die-hard *Game of Thrones* fan—because navigating careers is a lot like navigating Westeros… just with fewer dragons 👑⚔️.
+                        <br><br>
+                        With his mix of brains, creativity, and serious gaming skills, Kichan is bound to make Careers & Education a winning combination this year.
+                    </p>
+                </div>
+                <div class="frosted-tile">
+                    <h3 style="text-align: center;">Gallery</h3>
+                    <div class="image-gallery" style="display: flex; gap: 10px; justify-content: center;">
+                        <img src="images/kichan/01.jpg" alt="Kichan Photo 1" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                        <img src="images/kichan/02.jpg" alt="Kichan Photo 2" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                        <img src="images/kichan/03.jpg" alt="Kichan Photo 3" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                    </div>
+                </div>
+            `,
+            ryan: `
+                <div class="tile-row center-content">
+                    <div class="frosted-tile" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 20px;">
+                        <img src="images/ryan/circle.png" alt="Social Secretary Ryan Pemhiwa" 
+                            style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <h2 class="tile-title">Social Secretary</h2>
+                            <p class="tile-subtitle">Ryan Pemhiwa</p>
+                            <p class="tile-subtitle">Year 4 BSc Statistics & Data Science</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="frosted-tile">
+                    <p>
+                        Meet Ryan Pemhiwa, our towering Social Secretary, who’s not just handling the society’s social events but also making sure they’re as epic as an *Avengers: Endgame* finale! 🎉 As a 4th-year BSc Statistics & Data Science student, Ryan brings a lot more than just numbers to the table—he’s got the energy, charm, and height to match it all. Let’s just say, when Ryan walks into a room, you know he’s there! 💪🏽
+                        <br><br>
+                        A man of many talents, Ryan juggles basketball, tennis, and chess like a pro, but we’ve also got some insider info that he’s a regular at Pepe’s (don’t worry, Ryan, your secret chicken spot is safe with us… maybe 🐔😉). And when it comes to food, his go-to dish is *Amadombolo with Oxtail*—perfect for a guy who appreciates the finer things in life.
+                        <br><br>
+                        As the Vice President of the African Caribbean Society, Ryan knows how to lead and bring people together. Whether it’s on the basketball court or at a social, he’s always the guy you want around. And with his love for Amapiano, you can expect every event to come with some seriously good vibes 🔥🎶.
+                        <br><br>
+                        Ryan, we know this year’s socials are going to be unforgettable with you at the helm! Let’s make it a good one! 🫡🎉
+                    </p>
+                </div>
+                <div class="frosted-tile">
+                    <h3 style="text-align: center;">Gallery</h3>
+                    <div class="image-gallery" style="display: flex; gap: 10px; justify-content: center;">
+                        <img src="images/ryan/01.jpeg" alt="Ryan Photo 1" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                        <img src="images/ryan/02.jpeg" alt="Ryan Photo 2" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                        <img src="images/ryan/03.jpeg" alt="Ryan Photo 3" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                    </div>
+                </div>
+            `,
+            karan: `
+                <div class="tile-row center-content">
+                    <div class="frosted-tile" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 20px;">
+                        <img src="images/karan/circle.png" alt="Social Secretary Karan Kothari" 
+                            style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <h2 class="tile-title">Social Secretary</h2>
+                            <p class="tile-subtitle">Karan Kothari</p>
+                            <p class="tile-subtitle">Year 3 Computer Science</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="frosted-tile">
+                    <p>
+                        Let’s give a big shout-out to Karan Kothari, our new Social Secretary, ready to spice things up with his unique blend of smarts and social vibes! 🎉 As a 3rd-year Computer Science student and Vice President of the Computer Science Society, Karan knows how to juggle algorithms and agendas—but when it comes to sushi, he’s definitely more of an expert at eating it than rolling it 🍣.
+                        <br><br>
+                        With his love for the mind-bending show *Dark*, don’t be surprised if some of our events come with a twist. And while most people dream of the beach, Karan’s off planning a trip to Timor-Leste—because why go where everyone else goes when you can go where no one’s heard of? 🌏
+                        <br><br>
+                        A true A$AP Rocky fan, Karan’s playlists are always on point, keeping him hyped whether he’s cooking up a storm or brainstorming our next big social. If there’s one thing we can count on, it’s that Karan’s going to bring some serious flavour to the society this year—socials will never be the same again! 🫡🎉
+                    </p>
+                </div>
+                <div class="frosted-tile">
+                    <h3 style="text-align: center;">Gallery</h3>
+                    <div class="image-gallery" style="display: flex; gap: 10px; justify-content: center;">
+                        <img src="images/karan/01.jpeg" alt="Karan Photo 1" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                        <img src="images/karan/02.jpeg" alt="Karan Photo 2" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                        <img src="images/karan/03.jpeg" alt="Karan Photo 3" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px;">
+                    </div>
+                </div>
+            `
+        };
+
+// Function to load a member page
+function loadMemberPage(member) {
+    window.location.hash = member; // Update URL hash
+    loadSection(member); // Load the member's section dynamically
+}
+
+// Function to load a section
+function loadSection(section) {
+    const content = document.getElementById('content');
+    content.classList.add('fade-out'); // Trigger fade-out
+    setTimeout(() => {
+        content.innerHTML = sections[section] || `<div class="frosted-tile"><h1>Content not found</h1></div>`;
+        content.classList.remove('fade-out'); // Trigger fade-in
+    }, 300);
+}
+
+    // Handle navbar click events
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const section = event.target.getAttribute('data-section');
+            window.location.hash = section; // Update URL hash
+            loadSection(section); // Load the content dynamically
+        });
+    });
+
+    // Load section based on URL hash (for direct linking or refresh)
+    window.addEventListener('load', () => {
+        const hash = window.location.hash.substring(1); // Remove the "#" symbol
+        const initialSection = hash || 'home'; // Default to "home" if no hash is present
+        loadSection(initialSection); // Load the content dynamically
+    });
+
+    // Handle hash changes (e.g., browser back/forward navigation)
+    window.addEventListener('hashchange', () => {
+        const hash = window.location.hash.substring(1); // Remove the "#" symbol
+        loadSection(hash); // Load the content dynamically
+    });
+    </script>
+</body>
+</html>
